@@ -37,8 +37,13 @@ Then just enter the command.
 #### Input Format
 
 Line 1 contains case number (t)
+
 Line 2 contains n the width of channel
+
 Subsequent t lines contains the input in format
+
 {Coin_Name} {Interval} {Start_date} {End_date}
+
 Interval : among 1h, 4h, 1d, 1w
+
 Date format : mm/dd/yyyy
