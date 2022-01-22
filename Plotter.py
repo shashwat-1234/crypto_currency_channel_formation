@@ -66,22 +66,22 @@ def PlotChannel(dfpl, possible_channel, name:str = ""):
     folder = 'Plots/' + str(name) + '/Channel'
     createfolder(folder)
     
-    # for channel in possible_channel:
+    for channel in possible_channel:
 
-    #     fig = go.Figure(data=[go.Candlestick(x=dfpl.index,
-    #             open=dfpl['open'],
-    #             high=dfpl['high'],
-    #             low=dfpl['low'],
-    #             close=dfpl['close'])])
+        fig = go.Figure(data=[go.Candlestick(x=dfpl.index,
+                open=dfpl['open'],
+                high=dfpl['high'],
+                low=dfpl['low'],
+                close=dfpl['close'])])
         
-    #     c1 = channel[0]
-    #     c2 = channel[1]
+        c1 = channel[0]
+        c2 = channel[1]
         
-    #     PlotAddTrendLine(fig, c1, "above" + str(i))
-    #     PlotAddTrendLine(fig, c2, "below" + str(i))     
-    #     i = i+1 
+        PlotAddTrendLine(fig, c1, "above" + str(i))
+        PlotAddTrendLine(fig, c2, "below" + str(i))     
+        i = i+1 
         
-    #     filename = '/Channel_' + str(i) + '.jpeg'
-    #     write_image(fig,folder+filename , format = 'jpeg')
-    #     #fig.show()
+        filename = '/Channel_' + str(i) + '.jpeg'
+        write_image(fig,folder+filename , format = 'jpeg')
+        #fig.show()
     
