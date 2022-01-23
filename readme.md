@@ -47,3 +47,5 @@ Subsequent t lines contains the input in format
 Interval : among 1h, 4h, 1d, 1w
 
 Date format : mm/dd/yyyy
+
+For more information of the problem statement please view Channel_Assignment.pdf
