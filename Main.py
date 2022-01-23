@@ -16,6 +16,8 @@ for i in range(1, t+1):
     df = Data.df    
     above_trend, below_trend = FindTrendLines(df, n)                            # To first find the trend lines in the data
     
+    PlotTrendLines(df, above_trend, below_trend, x[0])
+    
     possible_channel, opt_channel = FindChannel(df, above_trend, below_trend)   # Finding of possible channel is done
     
     print("Case " + str(i) + " " + x[0] + ' : ' + str(len(opt_channel)))
