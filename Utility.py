@@ -95,6 +95,7 @@ def FindTrendLines(df, n: int = 20, distance_factor: float = 0.0025):
     
     remove_above_trend = []
     priceRange = df['max'].max() / df['min'].min()
+    normfactor = (df['max'].max() - df['min'].min())  / df.shape[0]
     
     for t1 in above_trend:
         if t1 in remove_above_trend:
@@ -112,7 +113,7 @@ def FindTrendLines(df, n: int = 20, distance_factor: float = 0.0025):
             slp1 = math.atan(t1['slp'])
             slp2 = math.atan(t2['slp'])
             
-            if abs(slp1 - slp2) < 0.013*priceRange and (abs(t1["i1"] - t2["i1"] < wind) or (abs(t1["i2"] - t2["i2"]) < wind)):
+            if abs(slp1 - slp2) < 0.05*normfactor and (abs(t1["i1"] - t2["i1"] < wind) or (abs(t1["i2"] - t2["i2"]) < wind)):
                 if l1 < l2:
                     remove_above_trend.append(t1)
                 else:
@@ -136,7 +137,7 @@ def FindTrendLines(df, n: int = 20, distance_factor: float = 0.0025):
             slp1 = math.atan(t1['slp'])
             slp2 = math.atan(t2['slp'])
             
-            if abs(slp1 - slp2) < 0.013*priceRange and (abs(t1["i1"] - t2["i1"] < wind) or (abs(t1["i2"] - t2["i2"]) < wind)):
+            if abs(slp1 - slp2) < 0.05*normfactor and (abs(t1["i1"] - t2["i1"] < wind) or (abs(t1["i2"] - t2["i2"]) < wind)):
                 if l1 < l2:
                     remove_below_trend.append(t1)
                 else:
